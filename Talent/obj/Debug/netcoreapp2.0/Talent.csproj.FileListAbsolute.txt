@@ -1,0 +1,12 @@
+C:\Ivy\source\repos\1Ultimate\Automation\Talent\bin\Debug\netcoreapp2.0\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Ivy\source\repos\1Ultimate\Automation\Talent\bin\Debug\netcoreapp2.0\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Ivy\source\repos\1Ultimate\Automation\Talent\bin\Debug\netcoreapp2.0\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Ivy\source\repos\1Ultimate\Automation\Talent\bin\Debug\netcoreapp2.0\Talent.deps.json
+C:\Ivy\source\repos\1Ultimate\Automation\Talent\bin\Debug\netcoreapp2.0\Talent.dll
+C:\Ivy\source\repos\1Ultimate\Automation\Talent\bin\Debug\netcoreapp2.0\Talent.pdb
+C:\Ivy\source\repos\1Ultimate\Automation\Talent\obj\Debug\netcoreapp2.0\Talent.csprojAssemblyReference.cache
+C:\Ivy\source\repos\1Ultimate\Automation\Talent\obj\Debug\netcoreapp2.0\Talent.csproj.CoreCompileInputs.cache
+C:\Ivy\source\repos\1Ultimate\Automation\Talent\obj\Debug\netcoreapp2.0\Talent.AssemblyInfoInputs.cache
+C:\Ivy\source\repos\1Ultimate\Automation\Talent\obj\Debug\netcoreapp2.0\Talent.AssemblyInfo.cs
+C:\Ivy\source\repos\1Ultimate\Automation\Talent\obj\Debug\netcoreapp2.0\Talent.dll
+C:\Ivy\source\repos\1Ultimate\Automation\Talent\obj\Debug\netcoreapp2.0\Talent.pdb
