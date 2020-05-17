@@ -1,9 +1,9 @@
 C:\Ivy\source\repos\1Ultimate\Automation\Framework\bin\Debug\netstandard2.0\Framework.deps.json
 C:\Ivy\source\repos\1Ultimate\Automation\Framework\bin\Debug\netstandard2.0\Framework.dll
 C:\Ivy\source\repos\1Ultimate\Automation\Framework\bin\Debug\netstandard2.0\Framework.pdb
+C:\Ivy\source\repos\1Ultimate\Automation\Framework\obj\Debug\netstandard2.0\Framework.csprojAssemblyReference.cache
+C:\Ivy\source\repos\1Ultimate\Automation\Framework\obj\Debug\netstandard2.0\Framework.csproj.CoreCompileInputs.cache
 C:\Ivy\source\repos\1Ultimate\Automation\Framework\obj\Debug\netstandard2.0\Framework.AssemblyInfoInputs.cache
 C:\Ivy\source\repos\1Ultimate\Automation\Framework\obj\Debug\netstandard2.0\Framework.AssemblyInfo.cs
 C:\Ivy\source\repos\1Ultimate\Automation\Framework\obj\Debug\netstandard2.0\Framework.dll
 C:\Ivy\source\repos\1Ultimate\Automation\Framework\obj\Debug\netstandard2.0\Framework.pdb
-C:\Ivy\source\repos\1Ultimate\Automation\Framework\obj\Debug\netstandard2.0\Framework.csprojAssemblyReference.cache
-C:\Ivy\source\repos\1Ultimate\Automation\Framework\obj\Debug\netstandard2.0\Framework.csproj.CoreCompileInputs.cache

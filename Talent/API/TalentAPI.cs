@@ -1,5 +1,5 @@
-﻿using System;
-using Talent.DataModel;
+﻿using Talent.DataModel;
+using System;
 
 namespace Talent.API
 {

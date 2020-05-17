@@ -8,14 +8,16 @@ namespace Talent.Pages
     public class LoginPage : BasePage
     {
         public override string Title { get; set; } = "Login";
+        private IWebElement EmailTextBox => Driver.Find(By.Id("email"));
         public LoginPage(IWebDriver driver) : base(driver) { }
 
-        public void Login(User user)
+        public DashboardPage LoginAs(User user)
         {
             ReportManager.LogTestStepInfo($"Log in as user Email: {user.Email} Password:{user.Password}");
-            Driver.WaitForElement(By.Id("email")).SendKeys(user.Email);
-            Driver.WaitForElement(By.Id("password")).SendKeys(user.Password);
-            Driver.WaitForElement(By.Id("btn_login")).Click();
+           EmailTextBox.SendKeys(user.Email);
+            Driver.Find(By.Id("password")).SendKeys(user.Password);
+            Driver.Find(By.Id("btn_login")).Click();
+            return new DashboardPage(Driver);
         }
     }
 }

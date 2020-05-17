@@ -31,7 +31,7 @@ namespace Talent.Tests
             var loginPage = new LoginPage(Driver);
             loginPage.Open();
 
-            loginPage.Login(user);
+            loginPage.LoginAs(user);
             DashboardPage.Open();
             DashboardPage.GoToProfilePage();
             var profilePage = new ProfilePage(Driver);

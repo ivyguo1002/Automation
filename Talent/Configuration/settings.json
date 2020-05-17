@@ -3,5 +3,5 @@
   "IdentityAPI": "http://localhost:60001/",
   "TalentAPI": "http://localhost:60002/",
   "ReportPath": "Reports\\",
-  "ScreenshotPath": "Report\\Screenshots\\"
+  "ScreenshotPath": "Reports\\Screenshots\\"
 }

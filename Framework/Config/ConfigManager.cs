@@ -1,4 +1,5 @@
-﻿using Framework.Helper;
+﻿using Framework.Helper.DataDriven;
+using Microsoft.VisualStudio.TestPlatform.ObjectModel;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,6 +13,5 @@ namespace Framework.Config
         {
             Settings = JsonDataHelper.ToObject<Setting>("Configuration\\settings.json");
         }
-
     }
 }

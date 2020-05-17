@@ -20,16 +20,16 @@ namespace Framework.Helper
             }
             else
             {
-                CreateScreenshotFilePath();
+                ScreenshotFilePath = CreateScreenshotFilePath();
                 screenshot.SaveAsFile(ScreenshotFilePath, ScreenshotImageFormat.Png);
             }
         }
 
-        private static void CreateScreenshotFilePath()
+        private static string CreateScreenshotFilePath()
         {
             var screenshotFolderPath = PathHelper.BaseDir() + ConfigManager.Settings.ScreenshotPath;
             var screenshotFileName = "screenshot" + DateTime.Now.ToString("_MM_dd_yyyy_HH-mm") +".png";
-            ScreenshotFilePath = Path.Combine(screenshotFolderPath, screenshotFileName);
+            return Path.Combine(screenshotFolderPath, screenshotFileName);
         }
     }
 }

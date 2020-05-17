@@ -1,10 +1,10 @@
-﻿using Framework.Helper;
-using System;
+﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using System.Linq;
 using Talent.DataModel;
 using Talent.Pages;
+using Framework.Helper.DataDriven;
 
 namespace Talent.Tests
 {
@@ -21,7 +21,6 @@ namespace Talent.Tests
         public void TestInit()
         {
             LoginPage = new LoginPage(Driver);
-            DashBoardPage = new DashboardPage(Driver);
             TestUsers = JsonDataHelper.ToObject<List<User>>("\\TestData\\users.json");
         }
 
@@ -31,18 +30,10 @@ namespace Talent.Tests
         [Description("Validate that user logs into system with valid credential successfully")]
         public void LoginWithValidCredential()
         {
-            try
-            {
-                LoginPage.Open();
-                var validUser = TestUsers.Where(user => user.Key.Equals("valid")).SingleOrDefault();
-                LoginPage.Login(validUser);
-                Assert.IsTrue(DashBoardPage.IsLoaded());
-            }
-            catch (Exception e)
-            {
-                ReportManager.AddErrorLogToReport(e);
-                throw;
-            }
+            LoginPage.Open();
+            var validUser = TestUsers.Where(user => user.Key.Equals("valid")).SingleOrDefault();
+            var dashBoardPage = LoginPage.LoginAs(validUser);
+            Assert.IsTrue(dashBoardPage.IsLoaded(), "Valid User should been logged into system and navigated to Dashboard Page");
         }
 
         [TestMethod]
@@ -51,8 +42,8 @@ namespace Talent.Tests
         {
             LoginPage.Open();
             var invalidUser = TestUsers.Where(user => user.Key.Equals("invalid")).SingleOrDefault();
-            LoginPage.Login(invalidUser);
-            Assert.IsFalse(DashBoardPage.IsLoaded());
+            var dashBoardPage = LoginPage.LoginAs(invalidUser);
+            Assert.IsFalse(dashBoardPage.IsLoaded(), "Invalid User should receive the error message");
         }
     }
 }

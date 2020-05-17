@@ -2,11 +2,11 @@
 using AventStack.ExtentReports.Reporter;
 using Framework.Config;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Text;
+using System.Linq;
+
 
 namespace Framework.Helper
 {
@@ -14,7 +14,6 @@ namespace Framework.Helper
     {
         public static AventStack.ExtentReports.ExtentReports Extent { get; private set; }
         public static ExtentTest CurrentTest { get; set; }
-        public static string ReportDirectory { get; private set; }
 
         public static string CreateReportDirectory()
         {
@@ -30,8 +29,8 @@ namespace Framework.Helper
 
         public static void StartReporter()
         {
-            ReportDirectory = CreateReportDirectory();
-            var htmlReporter = new ExtentHtmlReporter(ReportDirectory);
+            var reportDirectory = CreateReportDirectory();
+            var htmlReporter = new ExtentHtmlReporter(reportDirectory);
             Extent = new AventStack.ExtentReports.ExtentReports();
             Extent.AttachReporter(htmlReporter);
         }
@@ -44,22 +43,22 @@ namespace Framework.Helper
         public static void AddTestMethodMetadataToReport(TestContext testContext, List<string> testCategories)
         {
             CurrentTest = Extent.CreateTest(testContext.TestName);
-            if (testCategories == null)
-            {
-                return;
-            }
-            else
+            if (testCategories.Any())
             {
                 foreach (var category in testCategories)
                 {
                     CurrentTest.AssignCategory(category);
                 }
             }
+            else
+            {
+                return;
+            }
         }
         public static void AddTestOutcomeToReport(TestContext testContext)
         {
             var result = testContext.CurrentTestOutcome;
-            var fullTestName = testContext.FullyQualifiedTestClassName;
+            var fullTestName = testContext.FullyQualifiedTestClassName + testContext.TestName;
             
             switch (result)
             {

@@ -1,8 +1,8 @@
 ﻿using OpenQA.Selenium;
-using Talent.Pages;
 using Framework.Extensions;
+using Talent.Tests;
 
-namespace Talent.Tests
+namespace Talent.Pages
 {
     public class ProfilePage : BasePage
     {
@@ -12,7 +12,7 @@ namespace Talent.Tests
 
         public Skills Skills { get; set; }
 
-        public ProfilePage(IWebDriver driver) : base(driver) 
+        public ProfilePage(IWebDriver driver) : base(driver)
         {
             Skills = new Skills(Driver);
         }

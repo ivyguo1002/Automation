@@ -8,11 +8,14 @@ namespace Talent.Pages
     {
         public override string Title { get; set; } = "Dashboard";
         public override string Url { get; set; } = "/dashboard";
-        public DashboardPage(IWebDriver driver) : base(driver) { }
+        public DashboardPage(IWebDriver driver) : base(driver) 
+        {
+        }
 
-        public void GoToProfilePage()
+        public ProfilePage GoToProfilePage()
         {
             Driver.FindElement(By.XPath("//li/a[@href='/profile']")).Click();
+            return new ProfilePage(Driver);
         }
     }
 }

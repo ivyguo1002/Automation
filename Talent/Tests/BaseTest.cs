@@ -22,26 +22,27 @@ namespace Talent.Tests
         [TestInitialize]
         public void SetUpForEveryTestMethod()
         {
-            GetCategories();
-            ReportManager.AddTestMethodMetadataToReport(TestContext, TestCategories);
-            Driver = new WebDriverFactory().CreateDriver(BrowserType.Chrome);
+            var testCategories = GetCategories();
+            ReportManager.AddTestMethodMetadataToReport(TestContext, testCategories);
+            //Driver = new WebDriverFactory().CreateDriver(WebDriverType.Local, BrowserType.Chrome, TestContext);
         }
 
-        private void GetCategories()
+        private List<string> GetCategories()
         {
             var methodTestCategoryAttributes = GetType().GetMethod(TestContext.TestName)
                 .GetCustomAttributes<TestCategoryAttribute>(true);
             var classTestCategoryAttributes = GetType().GetCustomAttributes<TestCategoryAttribute>(true);
 
             var attributes = methodTestCategoryAttributes.Concat(classTestCategoryAttributes);
-
+            var testCategories = new List<String>();
             if (attributes != null)
             {
                 foreach (var attribute in attributes)
                 {
-                    TestCategories.AddRange(attribute.TestCategories);
+                    testCategories.AddRange(attribute.TestCategories);
                 }
             }
+            return testCategories;
         }
 
 
@@ -52,6 +53,7 @@ namespace Talent.Tests
             {
                 ScreenshotHelper.TakeAndSaveScreenshot(Driver);
             }
+
             ReportManager.AddTestOutcomeToReport(TestContext);
             
 

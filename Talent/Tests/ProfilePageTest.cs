@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Text;
 using Talent.API;
 using Talent.DataModel;
+using Talent.Pages;
 
 namespace Talent.Tests
 {

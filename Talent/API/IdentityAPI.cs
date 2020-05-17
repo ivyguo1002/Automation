@@ -1,5 +1,5 @@
-﻿using System;
-using Talent.DataModel;
+﻿using Talent.DataModel;
+using System;
 
 namespace Talent.API
 {
@@ -7,7 +7,7 @@ namespace Talent.API
     {
         internal static void SigninAs(Role talent)
         {
-            throw new NotImplementedException();
+
         }
     }
 }

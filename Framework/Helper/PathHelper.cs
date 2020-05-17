@@ -13,5 +13,11 @@ namespace Framework.Helper
             var currentDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
             return currentDirectory.Split(new string[] { "bin"}, StringSplitOptions.None)[0];
         }
+        public static string GetAbsolutePath(string filePath)
+        {
+            var path = PathHelper.BaseDir() + filePath;
+            return path;
+        }
+
     }
 }
